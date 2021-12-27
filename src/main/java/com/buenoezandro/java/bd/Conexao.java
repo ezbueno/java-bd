@@ -32,7 +32,7 @@ public class Conexao {
 
 	public static void createTable(Connection connection) {
 		String create = """
-				CREATE TABLE IF NOT EXISTS Medicos(
+				CREATE TABLE IF NOT EXISTS Medicos (
 				 id int(11) NOT NULL AUTO_INCREMENT,
 				 nome varchar(30) NOT NULL,
 				 sobreNome varchar(30) NOT NULL,
@@ -40,8 +40,10 @@ public class Conexao {
 				 anoNascimento int(11) NOT NULL,
 				 crm varchar(10) NOT NULL,
 				 salario float(14,2) DEFAULT NULL,
-				 PRIMARY KEY (`id`))
-				 ENGINE=InnoDB DEFAULT CHARSET=utf8;""";
+				 PRIMARY KEY (`id`)
+				 )
+				 ENGINE=InnoDB DEFAULT CHARSET=utf8;
+				 """;
 
 		try (Statement statement = connection.createStatement()) {
 			statement.execute(create);
