@@ -6,10 +6,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MedicoBean {
-
+public final class MedicoBean {
 	private static Logger logger = Logger.getLogger(Conexao.class.toString());
-
+	
 	private MedicoBean() {
 	}
 
@@ -34,7 +33,7 @@ public class MedicoBean {
 			preparedStatement.setFloat(6, 25.000F);
 
 			int r = preparedStatement.executeUpdate();
-			logger.log(Level.INFO, "Status: {0}", String.valueOf(r));
+			logger.log(Level.INFO, "Status: {0}, dados gravados com sucesso!", String.valueOf(r));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			logger.log(Level.SEVERE, "Erro: {0}", "Não foi possível inserir os dados na tabela!");
