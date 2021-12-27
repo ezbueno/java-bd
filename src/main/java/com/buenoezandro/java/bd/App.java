@@ -7,5 +7,7 @@ public class App {
 	public static void main(String[] args) {
 		Connection connection = Conexao.createConnection();
 		Conexao.createTable(connection);
+		
+		MedicoBean.insertData(connection);
 	}
 }
